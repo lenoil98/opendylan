@@ -777,7 +777,8 @@ define test test-position-alt-string-streams ()
   */
 end test;
 
-define test test-stretchy-stream (description: "<string-stream> stretchy vector tests")
+// <string-stream> stretchy vector tests
+define test test-stretchy-stream ()
   begin
     let sv = make(<stretchy-vector>);
     let s = make(<string-stream>, contents: sv, direction: #"output");
@@ -853,6 +854,18 @@ define test test-<pretty-stream> ()
   test-stream-class(<pretty-stream>, instantiable?: #t);
 end test;
 
+define test test-*standard-input* ()
+  //---*** Fill this in!
+end test;
+
+define test test-*standard-output* ()
+  //---*** Fill this in!
+end test;
+
+define test test-*standard-error* ()
+  //---*** Fill this in!
+end test;
+
 define suite streams-test-suite ()
   test test-<sequence-stream>;
   test test-bug-1360;
@@ -895,4 +908,7 @@ define suite streams-test-suite ()
   test test-with-indentation;
   test test-with-input-from-string;
   test test-with-output-to-string;
+  test test-*standard-input*;
+  test test-*standard-output*;
+  test test-*standard-error*;
 end suite;
